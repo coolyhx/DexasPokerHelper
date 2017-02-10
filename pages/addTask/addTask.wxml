@@ -1,0 +1,35 @@
+<view class="container">
+        <picker class="item" bindchange="onTaxChange" value="{{taxIndex}}" range="{{taxRange}}">
+            <view class="item-text">
+                <text class="name">税收：</text> 
+                <text class="value">{{taxRange[taxIndex]}}</text>
+                <image class="arrow-right" src="/images/arrowright.png" mode="aspectFill"></image> 
+                <view class="line"></view>
+            </view>
+        </picker>
+        <picker class="item" bindchange="onHandValueChange" value="{{handValueIndex}}" range="{{handValue}}">
+            <view class="item-text">
+                <text class="name">每手价值：</text> 
+                <text class="value">{{handValue[handValueIndex]}}</text>
+                <image class="arrow-right" src="/images/arrowright.png" mode="aspectFill"></image> 
+                <view class="line"></view>
+            </view>
+        </picker>
+        
+        <view class="title block">
+            会员
+        </view>
+
+        <view class="list">
+            <block wx:for-items="{{members}}" wx:for-item="member">
+                <view class="item" bindtap="toggleSelect" data-position="{{index}}" data-name="{{member.name}}">
+                    <text class="name">{{member.name}}</text>
+                    <image wx:if="{{member.selected==true}}" class="item-selected" src="/images/item_selected.png" mode="aspectFill"></image>
+                    <view class="line"></view>
+                </view>
+            </block>
+        </view>
+        <view class="f-b">
+            <button class="start-btn" bindtap="onStartClick" type="primary">开    始</button>
+        </view>
+</view>

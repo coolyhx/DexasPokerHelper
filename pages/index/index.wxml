@@ -1,0 +1,34 @@
+<!--index.wxml-->
+<view class="container">
+    <view class="list" >
+        <block wx:for-items="{{dataList}}" wx:for-item="dataItem">
+            <view class="item" bindlongtap="onItemLongClick" bindtap="onItemClick" data-position="{{index}}" data-id="{{dataItem.id}}" >
+                <view class="i-l">
+                    <view class="t-c">
+                        <text class="start-time t">开始时间：{{dataItem.startTime}}</text>
+                    </view>
+                    <view class="t-c">
+                        <text class="end-time t">结束时间：{{dataItem.endTime}}</text>
+                    </view>
+                    <view class="t-c">
+                        <text class="tax-and-all t">税收/总流水：{{dataItem.taxAndAll}}</text>
+                    </view>
+                </view>
+                <view class="i-r">
+                    <view class="t-c">
+                        <text wx:if="{{dataItem.statusCode==1}}" class="status t t-red">{{dataItem.status}}</text>
+                        <text wx:else class="status t t-green">{{dataItem.status}}</text>
+                    </view>
+                </view>
+                <view class="line">
+                </view>
+            </view>
+        </block>
+    </view>
+    <view wx:if="{{isEmpty==true}}" class="empty-v">
+        <text>赶紧按右下角按钮发起插秧活动吧~</text>
+    </view>
+    <view class="add-btn" bindtap="onAddClick" data-position="dfad">
+        <image src="/images/icon_add.png" mode="aspectFit" style="width:96rpx;height:96rpx" ></image>
+    </view>
+</view>

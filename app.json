@@ -1,0 +1,39 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/settings/settings",
+    "pages/addTask/addTask",
+    "pages/detail/detail"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#000000",
+    "navigationBarTitleText": "插秧助手",
+    "navigationBarTextStyle":"white",
+    "backgroundColor": "#ffffff"
+  },
+  "tabBar":{
+    "borderStyle": "black",
+    "color": "#373737",
+    "backgroundColor": "#ffffff",
+    "selectedColor": "#00CD66",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "首页",
+      "iconPath":"images/home_normail.png",
+      "selectedIconPath":"images/home_selected.png"
+    },{
+      "pagePath":"pages/settings/settings",
+      "text":"设置",
+      "iconPath":"images/settings_normal.png",
+      "selectedIconPath":"images/settings_selected.png"
+    }]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "connectSocket": 10000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
+  },
+  "debug":true
+}

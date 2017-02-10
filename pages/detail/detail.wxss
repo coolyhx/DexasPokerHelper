@@ -1,0 +1,84 @@
+.container{
+    padding-top: 30rpx;
+}
+.t-b{
+    background-color: #ffffff;
+    width:100%;
+}
+.name{
+  margin-left:44rpx;
+}
+.value{
+  position:absolute;
+  right:44rpx;
+}
+.b-m{
+  display: flex;
+  width:100%;
+}
+.b-b{
+  width:100%;
+}
+.r-t{
+  font-size: 30rpx;
+  padding-top:30rpx;
+  padding-left:30rpx;
+  padding-bottom:30rpx;
+}
+.form{
+  background-color: #ffffff;
+  border: solid #303030 0.5rpx;
+}
+.title{
+  background-color: #AECBED;
+  display: flex;
+}
+.cell{
+  border: solid #303030 0.5rpx;
+  box-sizing: border-box;
+  display: block;
+  font-size:30rpx;
+  line-height: 80rpx;
+  position: relative;
+  height:80rpx;
+}
+.f-item{
+  display: flex;
+}
+.row-1{
+  width:20%;
+}
+.row-2{
+  width:30%;
+}
+.row-3{
+  width:25%;
+}
+.row-4{
+  width:25%;
+}
+.cell .t{
+  display: block;
+  text-align: center;
+}
+.cell .icon{
+  width:50rpx;
+  height:48rpx;
+  position: absolute;
+}
+.cell .i-l{
+  left:20rpx;
+  top:14rpx;
+}
+.cell .i-r{
+  right:20rpx;
+  top:14rpx;
+}
+.row-3 input{
+  text-align: center;
+  height:80rpx;
+  line-height:80rpx;
+}
+.finish-btn{
+  margin: 30rpx;
+}

@@ -1,0 +1,60 @@
+.container{
+  padding-top:30rpx;
+}
+.log-list {
+  display: flex;
+  flex-direction: column;
+  padding: 40rpx;
+}
+.block{
+  display: block;
+  position: relative;
+}
+.t-add{
+  color: #00CD66;
+  position: absolute;
+  right: 50rpx;
+}
+.title{
+  width:100%;
+  display: block;
+  font-size: 30rpx;
+  padding-left: 30rpx;
+  padding-top: 30rpx;
+  padding-bottom: 30rpx;
+  box-sizing: border-box;
+  color: #303030;
+}
+.list{
+  width:100%;
+  padding-bottom:180rpx;
+}
+.name{
+  margin-left:44rpx;
+}
+.value{
+  position:absolute;
+  right:135rpx;
+}
+.arrow-right{
+    position: absolute;
+    top: 28rpx;
+    right: 44rpx;
+    width: 32rpx;
+    height: 32rpx;
+}
+.item-selected{
+  position:absolute;
+  top:14px;
+  right:22px;
+  width:24px;
+  height:17px;
+}
+.f-b{
+  position:fixed;
+  bottom:0;
+  width:100%;
+}
+.start-btn{
+  margin:30rpx 100rpx;
+}

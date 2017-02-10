@@ -1,0 +1,77 @@
+<view class="container">
+    <view class="t-b">
+        <view class="item">
+            <text class="name">开始时间：</text> 
+            <text class="value">{{startTime}}</text>
+            <view class="line"></view>
+        </view>
+        <view wx:if="{{statusCode==2}}" class="item">
+            <text class="name">结束时间：</text> 
+            <text class="value">{{endTime}}</text>
+            <view class="line"></view>
+        </view>
+        <view class="item">
+            <text class="name">税率：</text> 
+            <text class="value">{{taxRate}}</text>
+            <view class="line"></view>
+        </view>
+        <view class="item">
+            <text class="name">每手价值：</text> 
+            <text class="value">{{handValue}}</text>
+            <view class="line"></view>
+        </view>
+        <view wx:if="{{statusCode==2}}" class="item">
+            <text class="name">税收/总水：</text> 
+            <text class="value">{{taxAndAll}}</text>
+            <view class="line"></view>
+        </view>
+        <view class="item">
+            <text class="name">状态：</text> 
+            <text wx:if="{{statusCode==1}}"class="value t-red">{{status}}</text>
+            <text wx:else class="value t-green">{{status}}</text>            
+            <view class="line"></view>
+        </view>
+    </view>
+    <view class="b-m">
+        <text class="r-t">战况</text>
+    </view>
+    <view class="b-b">
+        <view class="form">
+            <view class="title">
+                <view class="row-1 cell">
+                    <text class="t">会员</text>
+                </view>
+                <view class="row-2 cell">
+                    <text class="t">总手数</text>
+                </view>
+                <view class="row-3 cell">
+                    <text class="t">筹码量</text>
+                </view>
+                <view class="row-4 cell">
+                    <text class="t">盈利</text>
+                </view>
+            </view>
+            <block wx:for-items="{{members}}" wx:for-item="member">
+                <view class="f-item">
+                    <view class="row-1 cell">
+                        <text class="t">{{member.name}}</text>
+                    </view>
+                    <view class="row-2 cell">
+                        <image class="icon i-l" wx:if="{{statusCode==1}}" data-position="{{index}}" src="/images/icon_minus.png" mode="aspectFit" bindtap="onMinus"></image>
+                        <text class="t">{{member.handCount}}</text>
+                        <image class="icon i-r" wx:if="{{statusCode==1}}" data-position="{{index}}" src="/images/icon_add.png" mode="aspectFit"bindtap="onPlus"></image>
+                    </view>
+                    <view class="row-3 cell">
+                        <input wx:if="{{statusCode==1}}" type="number" placeholder="最终筹码" data-position="{{index}}" bindinput="onInputChange"/>
+                        <text wx:else class="t">{{member.rest}}</text>
+                    </view>
+                    <view class="row-4 cell">
+                        <text wx:if="{{member.profit>0}}" class="t t-green">{{member.result}}</text>
+                        <text wx:else class="t t-red">{{member.result}}</text>
+                    </view>
+                </view>
+            </block>
+        </view>
+        <button wx:if="{{statusCode==1}}" class="finish-btn" type="primary" bindtap="finishClick">完    成</button>
+    </view>
+</view>

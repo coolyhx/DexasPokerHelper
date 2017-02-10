@@ -1,0 +1,47 @@
+<!--logs.wxml-->
+<view class="container">
+        <view class="title">参数设置</view>
+        <picker class="item" bindchange="onTaxChange" value="{{taxIndex}}" range="{{taxRange}}">
+            <view class="item-text">
+                <text class="name">税收：</text> 
+                <text class="value">{{taxRange[taxIndex]}}</text>
+                <image class="arrow-right" src="/images/arrowright.png" mode="aspectFill"></image> 
+                <view class="line"></view>
+            </view>
+        </picker>
+        <picker class="item" bindchange="onHandValueChange" value="{{handValueIndex}}" range="{{handValue}}">
+            <view class="item-text">
+                <text class="name">每手价值：</text> 
+                <text class="value">{{handValue[handValueIndex]}}</text>
+                <image class="arrow-right" src="/images/arrowright.png" mode="aspectFill"></image> 
+                <view class="line"></view>
+            </view>
+        </picker>
+        <!--<view class="item" bindtap="onFundClick">
+            <view class="item-text">
+                <text class="name">基金剩余：</text> 
+                <text class="value">{{fundRest}}</text>
+                <image class="arrow-right" src="/images/arrowright.png" mode="aspectFill"></image> 
+                <view class="line"></view>
+            </view>
+        </view>-->
+        <view class="title block">
+            会员
+            <text class="t-add" bindtap="onAddClick">添加</text>
+        </view>
+        <view class="list">
+            <block wx:for-items="{{members}}" wx:for-item="member">
+                <view class="item" bindlongtap="onDeleteClick" data-position="{{index}}" data-name="{{member.name}}">
+                    <text class="name">{{member.name}}</text>
+                    <view class="line"></view>
+                </view>
+            </block>
+        </view>
+        
+        <modal wx:if="{{!addMemberModalHidden}}" class="modal"confirm-text="确定" cancel-text="取消" mask bindconfirm="onModalConfirm" bindcancel="onModalCancel">
+            <input bindinput="bindKeyInput" placeholder="请输入姓名" auto-focus/>
+        </modal>
+        <modal wx:if="{{!removeMemberModalHidden}}" class="modal" confirm-text="确定" cancel-text="取消" mask bindconfirm="onRemoveModalConfirm" bindcancel="onRemoveModalCancel">
+            <text>是否删除“{{deleteMember}}”？</text>
+        </modal>
+</view>

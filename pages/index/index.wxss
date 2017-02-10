@@ -1,0 +1,19 @@
+.i-r{
+  position: absolute;
+  right: 30rpx;
+  top: 75rpx;
+}
+.t-c{
+  padding-top: 10rpx;
+  padding-left:30rpx;
+  padding-bottom:10rpx;
+  box-sizing: border-box;
+}
+.add-btn {
+  position: fixed;
+  bottom: 80rpx;
+  right:80rpx;
+}
+.empty-v{
+  margin-top:300rpx;
+}
